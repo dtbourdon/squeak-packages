@@ -8,7 +8,7 @@ Class {
 	#category : #'DTB-Tools'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #utils }
 FileSystemTools class >> cleanupFilenames: aDirectory dryRun: dryRun [
 	"
 	I cleanup files in the provided directory applying the following rulesrules: 
@@ -50,7 +50,7 @@ FileSystemTools class >> cleanupFilenames: aDirectory dryRun: dryRun [
 	]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #utils }
 FileSystemTools class >> filenameCharacterMappings [
 	"
 	I return a dictionary of offending filename characters and their preferred mappings.
@@ -68,6 +68,7 @@ FileSystemTools class >> filenameCharacterMappings [
 		at: '(' put: '';
 		at: ')' put: '';
 		at: ',' put: '';
+		at: '&' put: 'AND';
 		at: ($' asString) put: ''.
 	
 	^ mappings.
